@@ -28,28 +28,28 @@ Your readers will most likely view your README in a browser so please keep that 
 
 ## **Suggested Structure:**
 ---
-### **Name** :raising_hand:
+### :raising_hand: **Name** 
 Self-explanatory names are best. If the name sounds too vague or unrelated, it may be a signal to move on. It also must be catchy (remember Potacho's Award is at stake). Image, Logo, Gif or some color is strongly recommended.
 
-### **Status**
+### :baby: **Status**
 Alpha, Beta, 1.1, Ironhack Data Analytics Final Project, etc. It's OK to write a sentence, too. The goal is to let interested people know where this project is at.
 
-### **One-liner**
+### :running: **One-liner**
 Having a one-liner that describes the pipeline is useful for getting an idea of what the pipeline does in slightly greater detail. 
 
-### **Technology stack**
+### :computer: **Technology stack**
 Python, Pandas, Scipy, Scikit-learn, etc. Indicate the technological nature of the software, including primary programming language(s), main libraries and whether the software is intended as standalone or as a module in a framework or other ecosystem.
 
-### **Core technical concepts and inspiration**
+### :boom: **Core technical concepts and inspiration**
 Why does it exist? Frame your project for the potential user. Compare/contrast your project with other, similar projects so the user knows how it is different from those projects. Highlight the technical concepts that your project demonstrates or supports. Keep it very brief.
 
-### **Configuration**
+### :wrench: **Configuration**
 Requeriments, prerequisites, dependencies, installation instructions.
 
-### **Usage**
+### :see_no_evil: **Usage**
 Parameters, return values, known issues, thrown errors.
 
-### **Folder structure**
+### :file_folder: **Folder structure**
 ```
 └── project
     ├── __trash__
@@ -70,13 +70,13 @@ Parameters, return values, known issues, thrown errors.
         └── results
 ```
 
-### **ToDo**
+### :shit: **ToDo**
 Next steps, features planned, known bugs (shortlist).
 
-### **Further info**
+### :information_source: **Further info**
 Credits, alternatives, references, license.
 
-### **Contact info**
+### :love_letter: **Contact info**
 Getting help, getting involved, hire me please.
 
 
