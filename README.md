@@ -52,9 +52,9 @@ Parameters, return values, known issues, thrown errors.
 ### :file_folder: **Folder structure**
 ```
 └── project
-    ├── *__trash__*
+    ├── __trash__
     ├── .gitignore
-    ├── *.env*
+    ├── .env
     ├── requeriments.txt
     ├── README.md
     ├── main_script.py
