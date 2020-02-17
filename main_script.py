@@ -1,8 +1,8 @@
 import argparse
-from macquisition import acquisition as mac
-from mwrangling import wrangling as mwr
-from manalysis import analysis as man 
-from mreporting import reporting as mre 
+from p_acquisition import m_acquisition as mac
+from p_wrangling import m_wrangling as mwr
+from p_analysis import m_analysis as man 
+from p_reporting import m_reporting as mre 
 
 def argument_parser():
     parser = argparse.ArgumentParser(description = 'Set chart type')

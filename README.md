@@ -52,9 +52,9 @@ Parameters, return values, known issues, thrown errors.
 ### :file_folder: **Folder structure**
 ```
 └── project
-    ├── __trash__
+    ├── *__trash__*
     ├── .gitignore
-    ├── .env
+    ├── *.env*
     ├── requeriments.txt
     ├── README.md
     ├── main_script.py
@@ -70,6 +70,8 @@ Parameters, return values, known issues, thrown errors.
         └── results
 ```
 
+> Do not forget to include `__trash__` and `.env` in `.gitignore` 
+
 ### :shit: **ToDo**
 Next steps, features planned, known bugs (shortlist).
 
@@ -83,4 +85,9 @@ Getting help, getting involved, hire me please.
 
 > Here you have some repo examples:
 - [Art Classification](https://github.com/serguma/art_classification)
+
+> Here you have some tools and references:
+- [Make a README](https://www.makeareadme.com/)
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
