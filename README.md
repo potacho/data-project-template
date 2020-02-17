@@ -1,6 +1,7 @@
 # Data Project README file
 
-The README file describes the essence of the project playing the most important role. Most visitors (i.e.: potential recruiters) will simply scroll down about twice on the README and leave if they are not interested. So, the README file should provide the reason why recruiters want to checkout your project (and maybe hire you!!!). Bearing that in mind, your job is to: 
+The README file describes the essence of the project playing the most important role. Most visitors will simply scroll down about twice on the README and leave if they are not interested. So, the README file should provide the reason **why** to checkout your project!!!). 
+Bearing that in mind, your job is to: 
 - Tell them what it is (with context).
 - Show them what it looks like in action.
 - Show them how they use it.
@@ -8,11 +9,11 @@ The README file describes the essence of the project playing the most important 
 
 ![Image](https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/05/aiexcerpt.png)
 
+---
 
 ## **Formatting**
----
 Your readers will most likely view your README in a browser so please keep that in mind when formatting its content: 
-- Use proper format when necesary (i.e.: `import pandas as pd`). 
+- Use proper format when necesary (e.g.: `import pandas as pd`). 
 - Categorize content using two or three levels of header beneath. 
 - Make use of **emphasis** to call out important words. 
 - Link to project pages for related libraries you mention. Link to Wikipedia, Wiktionary, even Urban Dictionary definitions for words of which a reader may not be familiar. Make amusing cultural references. 
@@ -22,20 +23,19 @@ Your readers will most likely view your README in a browser so please keep that 
 
 
 ## **Start writing ASAP:**
----
 *Last but not least, by writing your README soon you give yourself some pretty significant advantages. Most importantly, you’re giving yourself a chance to think through the project without the overhead of having to change code every time you change your mind about how something should be organized or what should be included.*
 
 
 ## **Suggested Structure:**
----
+
 ### :raising_hand: **Name** 
-Self-explanatory names are best. If the name sounds too vague or unrelated, it may be a signal to move on. It also must be catchy (remember Potacho's Award is at stake). Image, Logo, Gif or some color is strongly recommended.
+Self-explanatory names are best. If the name sounds too vague or unrelated, it may be a signal to move on. It also must be catchy. Images, Logo, Gif or some color is strongly recommended.
 
 ### :baby: **Status**
-Alpha, Beta, 1.1, Ironhack Data Analytics Final Project, etc. It's OK to write a sentence, too. The goal is to let interested people know where this project is at.
+Alpha, Beta, 1.1, Ironhack Data Analytics Final Project, etc... It's OK to write a sentence, too. The goal is to let interested people know where this project is at.
 
 ### :running: **One-liner**
-Having a one-liner that describes the pipeline is useful for getting an idea of what the pipeline does in slightly greater detail. 
+Having a one-liner that describes the pipeline/api/app is useful for getting an idea of what your code does in slightly greater detail. 
 
 ### :computer: **Technology stack**
 Python, Pandas, Scipy, Scikit-learn, etc. Indicate the technological nature of the software, including primary programming language(s), main libraries and whether the software is intended as standalone or as a module in a framework or other ecosystem.
@@ -79,6 +79,7 @@ Credits, alternatives, references, license.
 ### :love_letter: **Contact info**
 Getting help, getting involved, hire me please.
 
+---
 
 > Here you have some repo examples:
 - [Art Classification](https://github.com/serguma/art_classification)
