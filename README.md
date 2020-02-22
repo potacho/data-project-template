@@ -84,7 +84,13 @@ Getting help, getting involved, hire me please.
 ---
 
 > Here you have some repo examples:
+- [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
 - [Art Classification](https://github.com/serguma/art_classification)
+- [OSNet-IBN (width x 1.0) Lite](https://github.com/RodMech/OSNet-IBN1-Lite)
+- [Movie Founder](https://github.com/Alfagu/final-project-Ironhack-0419mad)
+- [Convolutional Neural Network to detect Pneumonia](https://github.com/jmolins89/final-project)
+- [Brain tumor detection project](https://github.com/alonsopdani/brain-tumor-detection-project)
+- [Policy-Gradient-Methods](https://github.com/cyoon1729/Policy-Gradient-Methods)
 
 > Here you have some tools and references:
 - [Make a README](https://www.makeareadme.com/)
