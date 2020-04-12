@@ -4,12 +4,6 @@ import datetime
 
 # Create your models here.
 
-# class Vendor(models.Model):
-#     vendor_name = models.CharField(max_length=200, blank= True, null=True)
-#     registration_date = models.DateTimeField('date published')
-#     vendor_eans = models.CharField(max_length=200, blank= True, null=True)
-
-
 class Vendor(models.Model):
     vendor_name = models.CharField(max_length=200)
     vendor_eans = models.CharField(max_length=200)
