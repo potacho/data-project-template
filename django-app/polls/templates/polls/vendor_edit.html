@@ -1,11 +1,20 @@
 {% extends 'polls/base.html' %}
 
 {% block content %}
-    <h2>New vendor</h2>
+    <h2>New Search</h2>
     <form method="POST" class="vendor-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     
     </form>
+
+    <br><br>
+
+	<form action = "/data/" method="post"> {% csrf_token %}
+		Input Text: 
+		<input type="text" name="param" required><br><br>
+		<br><br>
+		<input type="submit" value="Execute Scraping">
+	</form>
 
 {% endblock %}

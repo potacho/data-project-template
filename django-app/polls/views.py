@@ -3,12 +3,14 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
-from .forms import VendorForm #, RawVendorForm
+from .forms import VendorForm, RawVendorForm
 from django.shortcuts import redirect
 from .models import Vendor
 import requests
 from subprocess import run, PIPE
 import sys
+import pandas as pd
+
 
 
 
@@ -31,6 +33,8 @@ def vendor_new(request):
             return redirect('vendor_detail', pk=vendor.pk)
     else:
         form = VendorForm()
+
+
     return render(request, 'polls/vendor_edit.html', {'form': form})
 
 
@@ -48,20 +52,29 @@ def vendor_edit(request, pk):
     return render(request, 'polls/vendor_edit.html', {'form': form})
 
 
-def vendor_button(request):
-    data=requests.get("https://www.google.es")
-    print(data.text)
-    data=data.text
-    return render(request, 'polls/button.html', {'data': data})
+def data_view(request):
 
-def button(request): 
-    return render(request, 'polls/button.html')
-
-
-def external(request):
     inp=request.POST.get("param")
-    out= run([sys.executable,'//Users//Abacuc//Project_IH_Abacuc//Scraping.py',inp], shell=False, stdout=PIPE)
-    print(out)
+    out= run([sys.executable,'//Users//Abacuc//Project_IH_Abacuc//django-app//Scraping.py',inp], shell=False, stdout=PIPE)
+    
+    carrefour_info= pd.read_csv('//Users//Abacuc//Project_IH_Abacuc//csv//carrefour_info.csv')
+    carrefour_info = carrefour_info.to_html()
+    ebay_info= pd.read_csv('//Users//Abacuc//Project_IH_Abacuc//csv//ebay_info.csv')
+    ebay_info= ebay_info.to_html()
+    amazon_info = pd.read_csv('//Users//Abacuc//Project_IH_Abacuc//csv//amazon_info.csv')
+    amazon_info= amazon_info.to_html()
+    eci_info = pd.read_csv('//Users//Abacuc//Project_IH_Abacuc//csv//eci_info.csv')
+    eci_info= eci_info.to_html()
 
-    return render(request, 'polls/button.html', {'data1': out.stdout})
+    return render(request, 'polls/data.html', {'carrefour_info': carrefour_info, 'ebay_info': ebay_info, 'amazon_info': amazon_info , 'eci_info': eci_info })
+
+def results_view(request):
+
+    inp=request.POST.get("param")
+    result= run([sys.executable,'//Users//Abacuc//Project_IH_Abacuc//django-app//Selection.py',inp], shell=False, stdout=PIPE)
+    print(result)
+    return render(request, 'polls/results.html', {'result': result.stdout})
+
+
+
 

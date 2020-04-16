@@ -11,6 +11,7 @@ import re
 import pandas as pd
 import urllib.request
 import sys
+from IPython.display import HTML
 from itertools import chain
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -284,6 +285,7 @@ os.environ['PATH'] = f'{os.environ["PATH"]}:{os.getcwd()}/drivers'
 ean_list_string= "%s" % (sys.argv[1])
 ean_list=ean_list_string.split(", ")
 
+
 # In[5]:
 
 
@@ -533,6 +535,7 @@ def ebay(ean_list):
     return  ebay_info
 
 
+
 @ray.remote
 
 
@@ -690,7 +693,6 @@ def amazon(ean_list):
 
     return amazon_info
 
-'''
 
 @ray.remote
 
@@ -703,6 +705,8 @@ def eci(ean_list):
     browser.get('https://www.elcorteingles.es/')
 
     time.sleep(3)
+    
+   
 
     
     for ean in ean_list:
@@ -718,7 +722,7 @@ def eci(ean_list):
 
         time.sleep(3)
         
-        
+               
         try:
 
             title = browser.find_elements_by_xpath('//h2[@class="title"]')[0].text
@@ -737,8 +741,6 @@ def eci(ean_list):
         try: 
             
             price = browser.find_elements_by_xpath('//div[@class="product-price "]')[0].text
-            price_list=price.split("€")
-            price = price_list[0]
         
         except NoSuchElementException:
             
@@ -751,7 +753,7 @@ def eci(ean_list):
         
         try: 
             
-             main_image = browser.find_element_by_xpath('//img[@id="product-image-placer"]').get_attribute('src')
+            main_image = browser.find_element_by_xpath('//img[@id="product-image-placer"]').get_attribute('src')
 
         except NoSuchElementException:
             
@@ -833,20 +835,30 @@ def eci(ean_list):
         
         eci_info.loc[ean] = [title, price, main_image, features, more_features]
     
-    
+        
     browser.close()
     
     return eci_info
-'''
+                
+
 
 ret_id1 = carrefour.remote(ean_list)
 ret_id2 = ebay.remote(ean_list)
 ret_id3 = amazon.remote(ean_list)
-#ret_id4 = eci.remote(ean_list)
+ret_id4 = eci.remote(ean_list)
 
 
-carrefour_info, ebay_info, amazon_info = ray.get([ret_id1, ret_id2, ret_id3])
+carrefour_info, ebay_info, amazon_info, eci_info = ray.get([ret_id1, ret_id2, ret_id3, ret_id4])
 
-print(carrefour_info)
-print(ebay_info)
-print(amazon_info)
+
+
+ray.shutdown()
+
+directory = '/Users/Abacuc/Project_IH_Abacuc/csv'
+if not os.path.exists(directory):
+    os.mkdir(directory)
+
+carrefour_info.to_csv(f'{directory}/carrefour_info.csv')
+ebay_info.to_csv(f'{directory}/ebay_info.csv')
+amazon_info.to_csv(f'{directory}/amazon_info.csv')
+eci_info.to_csv(f'{directory}/eci_info.csv')

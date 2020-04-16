@@ -1,0 +1,57 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<br><br>
+
+<form action = "/results/" method="post"> {% csrf_token %}
+	Input Text: 
+	<input type="text" name="param" required><br><br>
+	<br><br>
+	<input type="submit" value="Show the Best Marketplace">
+</form>
+
+
+
+
+<h2>
+	Carrefour
+
+	<img id="currentPhoto" src="https://cclasarenas.com/wp-content/uploads/2017/11/carrefour-las-arenas-1024x688.jpg" onerror="this.src='https://miro.medium.com/max/2000/1*f2-zeAOSNB4RGlqH9emTlQ.jpeg'" alt="" height="300" width="300">
+
+</h2>
+	<br><br>
+	<div id="my_table"> {{ carrefour_info | safe }} </div>
+	<br><br>
+
+<h2>
+	Ebay
+
+	<img id="currentPhoto" src="https://ir.ebaystatic.com/cr/v/c1/ebay-logo-1-1200x630-margin.png'" alt="" height="300" width="300">
+
+</h2>
+	<br><br>
+	<div id="my_table"> {{ ebay_info | safe }} </div>
+	<br><br>
+
+<h2>
+	Amazon
+
+	<img id="currentPhoto" src="https://www.merca2.es/wp-content/uploads/2019/08/amazon-servicio-de-musicagratuito-1-1200x675.jpg'" alt="" height="300" width="300">
+
+</h2>
+	<br><br>
+	<div id="my_table"> {{ amazon_info | safe }} </div>
+	<br><br>
+
+<h2>
+	El Corte Ingles
+
+	<img id="currentPhoto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Logo_Corte_Ingl%C3%A9s.svg/1200px-Logo_Corte_Ingl%C3%A9s.svg.png" alt="" height="300" width="300">
+
+</h2>
+	<br><br>
+	<div id="my_table"> {{ eci_info | safe }} </div>
+	<br><br>
+{% endblock %}
+

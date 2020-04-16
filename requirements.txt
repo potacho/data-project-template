@@ -4,3 +4,7 @@ Django==2.2.5
 ray==0.8.4
 selenium==3.141.0 
 lxml==4.5.0
+django-model-utils-4.0.0
+django-pandas-0.6.1
+bootstrap
+JQuery
