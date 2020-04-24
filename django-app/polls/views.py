@@ -38,18 +38,18 @@ def vendor_new(request):
     return render(request, 'polls/vendor_edit.html', {'form': form})
 
 
-def vendor_edit(request, pk):
-    vendor = get_object_or_404(Vendor, pk=pk)
-    if request.method == "POST":
-        form = VendorForm(request.POST, instance=vendor)
-        if form.is_valid():
-            vendor = form.save(commit=False)
-            vendor.published_date = timezone.now()
-            vendor.save()
-            return redirect('vendor_detail', pk=vendor.pk)
-    else:
-        form = VendorForm(instance=vendor)
-    return render(request, 'polls/vendor_edit.html', {'form': form})
+# def vendor_edit(request, pk):
+#     vendor = get_object_or_404(Vendor, pk=pk)
+#     if request.method == "POST":
+#         form = VendorForm(request.POST, instance=vendor)
+#         if form.is_valid():
+#             vendor = form.save(commit=False)
+#             vendor.published_date = timezone.now()
+#             vendor.save()
+#             return redirect('vendor_detail', pk=vendor.pk)
+#     else:
+#         form = VendorForm(instance=vendor)
+#     return render(request, 'polls/vendor_edit.html', {'form': form})
 
 
 def data_view(request):
@@ -65,13 +65,20 @@ def data_view(request):
     amazon_info= amazon_info.to_html()
     eci_info = pd.read_csv('//Users//Abacuc//Project_IH_Abacuc//csv//eci_info.csv')
     eci_info= eci_info.to_html()
+    mm_info = pd.read_csv('//Users//Abacuc//Project_IH_Abacuc//csv//mm_info.csv')
+    mm_info= mm_info.to_html()
 
-    return render(request, 'polls/data.html', {'carrefour_info': carrefour_info, 'ebay_info': ebay_info, 'amazon_info': amazon_info , 'eci_info': eci_info })
+
+    return render(request, 'polls/data.html', {'carrefour_info': carrefour_info, 'ebay_info': ebay_info, 'amazon_info': amazon_info , 'eci_info': eci_info, 'mm_info': mm_info  })
 
 def results_view(request):
 
     inp=request.POST.get("param")
-    result= run([sys.executable,'//Users//Abacuc//Project_IH_Abacuc//django-app//Selection.py',inp], shell=False, stdout=PIPE)
+    inp1=request.POST.get("categoria de productos")
+    inp2=request.POST.get("Edad Media cliente")
+    inp3=request.POST.get("Tamaño Familia")
+    inp4=request.POST.get("Tipo de comunidad")
+    result= run([sys.executable,'//Users//Abacuc//Project_IH_Abacuc//django-app//Selection.py',inp,inp1,inp2,inp3,inp4], shell=False, stdout=PIPE)
     print(result)
     return render(request, 'polls/results.html', {'result': result.stdout})
 

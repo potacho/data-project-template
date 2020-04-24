@@ -201,6 +201,7 @@ def asignar_variables_ebay(detalles_tecnicos_1, detalles_tecnicos_2, detalles_te
     return estado, marca, tipo, caracteristicas
 
 
+
 def feature_function(features):
     features_list=features.split("\n")
     long=len(features_list)
@@ -257,24 +258,15 @@ def initialize_amazon_info_df():
                                                          ])
     return amazon_info
 
-    
-def feature_function(features):
-    features_list=features.split("\n")
-    long=len(features_list)
-    count_till= 40  
-    while long < count_till:
-        features_list.append(float('nan'))
-        long+=1
-    return features_list
 
-
-def initialize_eci_info_df():
+def initialize_mm_info_df():
     
-    eci_info = pd.DataFrame(columns = ['item_name.value', 
+    mm_info = pd.DataFrame(columns = ['item_name.value', 
                                                           'list_price.value_with_tax', 
-                                                          'main_image','features','more_features'
+                                                          'main_image','description','more_features'
                                                          ])
-    return eci_info
+    return mm_info
+
 
 
 # In[4]:
@@ -283,7 +275,7 @@ def initialize_eci_info_df():
 os.environ['PATH'] = f'{os.environ["PATH"]}:{os.getcwd()}/drivers'
 
 ean_list_string= "%s" % (sys.argv[1])
-ean_list=ean_list_string.split(", ")
+ean_list=ean_list_string.split(",")
 
 
 # In[5]:
@@ -840,15 +832,129 @@ def eci(ean_list):
     
     return eci_info
                 
+@ray.remote
 
+def mm(ean_list):
+    
+    mm_info = initialize_mm_info_df()
+    
+  
+    
+    
+    
+    for ean in ean_list:
+        
+        
+        title = price = main_image = description = more_features = float('nan')
+
+        browser = webdriver.Firefox()
+        browser.get('https://www.mediamarkt.es/')
+
+        time.sleep(3)
+        
+        search = browser.find_element_by_xpath('//input[@class="ms-textfield ms-textfield--search ms-autosugestions__search-input"]')
+        search.clear()
+        search.send_keys(Keys.DELETE)
+        search.send_keys(ean)
+        search.send_keys(Keys.ENTER)
+
+        time.sleep(3)
+        
+        try: 
+            
+
+            title = browser.find_elements_by_xpath('//h1[@itemprop="name"]')[0].text
+                
+                
+        except NoSuchElementException:
+            
+            print(f"title {ean} not found")
+            
+        except IndexError:
+            
+            print(f"title {ean} not found")
+            
+        
+        try:
+            
+            price = browser.find_elements_by_xpath('//div[@class="price big length-6"]')[0].text
+
+
+        except NoSuchElementException:
+            
+            print(f"price {ean} not found")
+        
+        
+        except IndexError:
+            
+            print(f"price {ean} not found")
+            
+        try: 
+            
+            main_image = browser.find_element_by_xpath('//a[@class="zoom"]').get_attribute('href')
+    
+        except NoSuchElementException:
+            
+            print(f"main image {ean} not found")
+        
+        except IndexError:
+            
+            print(f"main image {ean} not found")
+            
+            
+        try:
+            
+            description = browser.find_elements_by_xpath('//div[@class="fg-box bpx0 bpy1 bsx3 bsy1 mpx0 mpy1 msx3 msy1 spx0 spy1 ssx3 ssy1 fg-box-size-x-3"]')[0].text
+
+
+        except NoSuchElementException:
+            
+            print(f" description {ean} not found")
+        
+        
+        except IndexError:
+            
+            print(f" description {ean} not found")
+        
+        
+        try:
+
+            action = ActionChains(browser)
+            click_view_more  = browser.find_element_by_xpath("(//a[@class='button button-toggle-collapsed js-toggle-collapsed'])")
+            
+            if 'firefox' in browser.capabilities['browserName']:
+                scroll_shim(browser, click_view_more)
+            action.move_to_element((click_view_more)).click().perform()
+
+         
+        except NoSuchElementException:
+            
+            print("IMPOSILE TO SCROLL")
+                        
+            
+        except IndexError:
+            
+            print("IMPOSILE TO SCROLL")
+                    
+            
+            
+        
+        mm_info.loc[ean] = [title, price, main_image, description, more_features]
+
+    
+        browser.close()
+    
+    return mm_info
+
+    
 
 ret_id1 = carrefour.remote(ean_list)
 ret_id2 = ebay.remote(ean_list)
 ret_id3 = amazon.remote(ean_list)
 ret_id4 = eci.remote(ean_list)
+ret_id5 = mm.remote(ean_list)
 
-
-carrefour_info, ebay_info, amazon_info, eci_info = ray.get([ret_id1, ret_id2, ret_id3, ret_id4])
+carrefour_info, ebay_info, amazon_info, eci_info, mm_info = ray.get([ret_id1, ret_id2, ret_id3, ret_id4, ret_id5])
 
 
 
@@ -862,3 +968,4 @@ carrefour_info.to_csv(f'{directory}/carrefour_info.csv')
 ebay_info.to_csv(f'{directory}/ebay_info.csv')
 amazon_info.to_csv(f'{directory}/amazon_info.csv')
 eci_info.to_csv(f'{directory}/eci_info.csv')
+mm_info.to_csv(f'{directory}/mm_info.csv')

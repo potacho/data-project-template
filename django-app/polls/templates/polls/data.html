@@ -4,14 +4,50 @@
 
 <br><br>
 
+<h2>Selecciona las Características de tus clientes</h2>
+
 <form action = "/results/" method="post"> {% csrf_token %}
 	Input Text: 
 	<input type="text" name="param" required><br><br>
 	<br><br>
-	<input type="submit" value="Show the Best Marketplace">
+	<label for="categoria de productos">Elige una Categoria de productos:</label>
+  	<select id="categoria de productos" name="categoria de productos">
+    	<option value="Electrónica y Media">Electrónica y Media/option>
+    	<option value="Hobby y Juguetes">Hobby y Juguetes/option>
+    	<option value="Muebles y Hogar">Muebles y Hogar</option>
+    	<option value="Comida y Cuidado personal">Comida y Cuidado personal</option>
+    	<option value="Moda">Moda</option>
+  	</select>
+  	<br><br>
+  	<label for="Edad Media cliente">Edad Media cliente:</label>
+  	<select id="Edad Media cliente" name="Edad Media cliente">
+    	<option value="18-24">18-24</option>
+    	<option value="25-34">25-34</option>
+    	<option value="35-44">35-44</option>
+    	<option value="45-54">45-54</option>
+    	<option value="55-64">55-64</option>
+  	</select>
+  	<br><br>
+  	<label for="Tamaño Familia">Tamaño Familia:</label>
+  	<select id="Tamaño Familia" name="Tamaño Familia">
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    	<option value="3">3</option>
+    	<option value="4">4</option>
+    	<option value="5">5</option>
+  	</select>
+  	<br><br>
+  	<label for="Tipo de comunidad">Tipo de comunidad:</label>
+  	<select id="Tipo de comunidad" name="Tipo de comunidad">
+    	<option value="Comunidades Rurales">Comunidades Rurales</option>
+    	<option value="Pequeños Pueblos">Pequeños Pueblos</option>
+    	<option value="Ciudades Medianas">Ciudades Medianas</option>
+    	<option value="Grandes Ciudades">Grandes Ciudades</option>
+    	<option value="Ciudades con mas de 1 millón de habitantes">Ciudades con mas de 1 millón de habitantes</option>
+  	</select>
+  	<br><br>
+	<input type="submit" value="Show the Best Marketplace to Start">
 </form>
-
-
 
 
 <h2>
@@ -52,6 +88,16 @@
 </h2>
 	<br><br>
 	<div id="my_table"> {{ eci_info | safe }} </div>
+	<br><br>
+
+<h2>
+	MediaMarkt
+
+	<img id="currentPhoto" src="https://www.marronyblanco.com/wp-content/uploads/Logo-Media-Markt-1.jpg" alt="" height="300" width="300">
+
+</h2>
+	<br><br>
+	<div id="my_table"> {{ mm_info | safe }} </div>
 	<br><br>
 {% endblock %}
 

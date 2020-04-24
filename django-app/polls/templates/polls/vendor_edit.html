@@ -1,19 +1,18 @@
 {% extends 'polls/base.html' %}
 
 {% block content %}
-    <h2>New Search</h2>
-    <form method="POST" class="vendor-form">{% csrf_token %}
+    <h2>Nueva Busqueda</h2>
+   <!--  <form method="POST" class="vendor-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     
     </form>
 
-    <br><br>
+    <br><br> -->
 
 	<form action = "/data/" method="post"> {% csrf_token %}
-		Input Text: 
+		Introduce los códigos de barras: 
 		<input type="text" name="param" required><br><br>
-		<br><br>
 		<input type="submit" value="Execute Scraping">
 	</form>
 
