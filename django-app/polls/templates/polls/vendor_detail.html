@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <div class="vendor">
+        {% if vendor.published_date %}
+            <div class="date">
+                {{ vendor.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'vendor_edit' pk=vendor.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h2>{{ vendor.vendor_name }}</h2>
+        <p>{{ vendor.vendor_eans|linebreaksbr }}</p>
+    </div>
+{% endblock %}

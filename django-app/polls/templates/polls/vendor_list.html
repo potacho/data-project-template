@@ -1,0 +1,19 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+    {% for vendor in vendors %}
+        <div class="vendor">
+            <div class="date">
+                {{ vendor.published_date }}
+            </div>
+            <h2><a href="{% url 'vendor_detail' pk=vendor.pk %}">{{ vendor.vendor_name}}</a></h2>
+            <p>{{ vendor.vendor_eans|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+				
+
+<!-- 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> 
+
