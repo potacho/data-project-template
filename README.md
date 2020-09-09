@@ -84,17 +84,22 @@ Getting help, getting involved, hire me please.
 ---
 
 > Here you have some repo examples:
-- [Yummest](https://github.com/almsasantos/Yummest_Food_App)
-- [HackDecó](https://github.com/herreradelduque/Ironhack-Final-Project---HackDeco)
 - [Onegy](https://github.com/borjauria/Final-Project)
-- [Math handwritting recognition](https://github.com/yaakx/Math_handwritting_recognition)
-- [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
-- [Art Classification](https://github.com/serguma/art_classification)
-- [OSNet-IBN (width x 1.0) Lite](https://github.com/RodMech/OSNet-IBN1-Lite)
+- [E-VITALOS](https://github.com/marinapm90/E-vitalos)
 - [Movie Founder](https://github.com/Alfagu/final-project-Ironhack-0419mad)
+- [MMELT](https://github.com/Juanjopf19/Ironhack-final-project--MMELT) 
+
+- [ART-ificial intelligence](https://github.com/Juliaroch/Ironhack-final-project-Julia-Roch)
+- [Next-Frida](https://github.com/Pacoanes/Next-Frida)
+- [Art Classification](https://github.com/serguma/art_classification)
 - [Convolutional Neural Network to detect Pneumonia](https://github.com/jmolins89/final-project)
 - [Brain tumor detection project](https://github.com/alonsopdani/brain-tumor-detection-project)
-- [Policy-Gradient-Methods](https://github.com/cyoon1729/Policy-Gradient-Methods)
+
+- [Math handwritting recognition](https://github.com/yaakx/Math_handwritting_recognition)
+- [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
+
+- [Yummest](https://github.com/almsasantos/Yummest_Food_App)
+- [HackDecó](https://github.com/herreradelduque/Ironhack-Final-Project---HackDeco)
 
 > Here you have some tools and references:
 - [Make a README](https://www.makeareadme.com/)
