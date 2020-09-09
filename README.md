@@ -84,6 +84,10 @@ Getting help, getting involved, hire me please.
 ---
 
 > Here you have some repo examples:
+- [Yummest](https://github.com/almsasantos/Yummest_Food_App)
+- [HackDecó](https://github.com/herreradelduque/Ironhack-Final-Project---HackDeco)
+- [Onegy](https://github.com/borjauria/Final-Project)
+- [Math handwritting recognition](https://github.com/yaakx/Math_handwritting_recognition)
 - [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
 - [Art Classification](https://github.com/serguma/art_classification)
 - [OSNet-IBN (width x 1.0) Lite](https://github.com/RodMech/OSNet-IBN1-Lite)
