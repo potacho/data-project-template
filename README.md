@@ -101,6 +101,9 @@ Getting help, getting involved, hire me please.
 - [Yummest](https://github.com/almsasantos/Yummest_Food_App)
 - [HackDecó](https://github.com/herreradelduque/Ironhack-Final-Project---HackDeco)
 
+- [Political Spanish Sentiment](https://github.com/ssarahreyes/political_spanish_sentiment)
+- [Face-Mask Detection](https://github.com/marinafdezban/final_project)
+
 > Here you have some tools and references:
 - [Make a README](https://www.makeareadme.com/)
 - [Awesome README](https://github.com/matiassingers/awesome-readme)
