@@ -84,25 +84,26 @@ Getting help, getting involved, hire me please.
 ---
 
 > Here you have some repo examples:
-- [Onegy](https://github.com/borjauria/Final-Project)
-- [E-VITALOS](https://github.com/marinapm90/E-vitalos)
-- [Movie Founder](https://github.com/Alfagu/final-project-Ironhack-0419mad)
-- [MMELT](https://github.com/Juanjopf19/Ironhack-final-project--MMELT) 
 
-- [ART-ificial intelligence](https://github.com/Juliaroch/Ironhack-final-project-Julia-Roch)
-- [Next-Frida](https://github.com/Pacoanes/Next-Frida)
-- [Art Classification](https://github.com/serguma/art_classification)
-- [Convolutional Neural Network to detect Pneumonia](https://github.com/jmolins89/final-project)
-- [Brain tumor detection project](https://github.com/alonsopdani/brain-tumor-detection-project)
-
-- [Math handwritting recognition](https://github.com/yaakx/Math_handwritting_recognition)
-- [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
-
-- [Yummest](https://github.com/almsasantos/Yummest_Food_App)
-- [HackDecó](https://github.com/herreradelduque/Ironhack-Final-Project---HackDeco)
+- [Spotify Recommender](https://github.com/a-fp/Final_Project)
 
 - [Political Spanish Sentiment](https://github.com/ssarahreyes/political_spanish_sentiment)
 - [Face-Mask Detection](https://github.com/marinafdezban/final_project)
+
+- [Data Town](https://github.com/carpiero/DataTown)
+- [Show us your Panerai Watch!](https://github.com/Pvillamanario/Panerai_or_not_Ironhack_final_project)
+
+- [Onegy](https://github.com/borjauria/Final-Project)
+- [Yummest](https://github.com/almsasantos/Yummest_Food_App)
+- [Math handwritting recognition](https://github.com/yaakx/Math_handwritting_recognition)
+- [HackDecó](https://github.com/herreradelduque/Ironhack-Final-Project---HackDeco)
+
+- [E-VITALOS](https://github.com/marinapm90/E-vitalos)
+- [Movie Founder](https://github.com/Alfagu/final-project-Ironhack-0419mad)
+
+- [MMELT](https://github.com/Juanjopf19/Ironhack-final-project--MMELT) 
+- [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
+- [Art Classification](https://github.com/serguma/art_classification)
 
 > Here you have some tools and references:
 - [Make a README](https://www.makeareadme.com/)
